@@ -1,0 +1,187 @@
+﻿/*------------------------------------*\
+   DEFAULT STYLES
+\*------------------------------------*/
+
+@font-face { 
+	font-family: 'Open Sans'; 
+	src: url($font-url--open-sans);
+}
+
+@font-face { 
+	font-family: 'Roboto Slab'; 
+	src: url($font-url--roboto-slab);
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: $font-size;
+  font-family: $font-sans; // Open Sans
+  line-height: $line-height;
+  color: map-get($colors--base, text);
+  background: map-get($colors--base, white);
+}
+
+/**
+ * HEADINGS STYLES
+ * ============================================================ */
+h1 {
+	@include headline(7);
+}
+
+h2 {
+	@include headline(6);
+}
+
+h3 {
+	@include headline(5);
+}
+
+h4 {
+	@include headline(4);
+}
+
+h5 {
+	@include headline(3)
+}
+
+h6 {
+    @include headline(2);
+}
+
+/**
+ * PARAGRAPHS
+ * ============================================================ */
+
+p {
+	@include margin( em(5px) );
+  	@include padding( em(5px)  em(15px) );
+	font-weight: map-get($font-weights, light);
+	font-size: $font-size;
+	line-height: $line-height;
+}
+
+/**
+ * LINKS
+ * ============================================================ */
+#{$buttons-list}, select, a {
+	cursor: pointer;
+}
+
+a {
+	@include padding( em(5px) );
+	text-decoration: none;
+	font-weight: map-get($font-weights, light);
+  	color: map-get($colors--base, blue);
+  	
+	 &:hover, &:visited {
+	    text-decoration: none;
+	    color: darken( map-get($colors--base, blue), 15%)
+	}
+}
+
+/**
+ * Other Typography
+ * ============================================================ */
+blockquote {
+	@include margin( em(5px) 0 em(5px) em(20px) );
+	font-weight: map-get($font-weights, 'light');
+	font-size : em(0.8 * $font-size);
+	line-height: 1em;
+}
+
+/**
+ * BUTTONS
+ * ============================================================ */
+#{$buttons-list} {
+	@include btn--ghost();
+}
+
+
+/**
+ * LISTS
+ * ============================================================ */
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/**
+ * Images
+ * ============================================================ */
+img {
+  margin-bottom: 0;
+  max-width: 100%;
+  height: auto;
+  image-rendering: crisp-edges;
+  min-height: rem(50px);
+}
+
+/**
+ * TABLES
+ * ============================================================ */
+
+table {
+	@include margin( rem(30px) auto );
+	@include flex-base();
+	width: 90%;
+	min-width: 50vw;
+	text-align: center; 
+}
+
+
+
+
+/**
+ * FORM ELEMENTS
+ * ============================================================ */
+#{$text-inputs-list}, 
+textarea {
+	@include padding( em(15px) );
+	@include margin( em(15px) auto );
+	display: inline-block;
+	max-width: 350px;
+	min-height: 60px;
+	text-align: center;
+	background: map-get($colors--base, 'navy--ll');
+	color: white;
+	outline: 0;
+	border: 1px solid map-get($colors--base, 'navy--l');
+	border-radius: $radius--default;
+	transition: all $trns_duration ease;
+}
+
+@include placeholder() {
+	color: black;
+}
+
+input:focus, textarea:focus, 
+input:active, textarea:active {
+	transition: all $trns_duration cubic-bezier(0.23, 1, 0.32, 1);
+	background: map-get($colors--base, 'blue');
+	color: map-get($colors--base, 'white');
+	font-weight: map-get($font-weights, 'medium');
+}
+
+
+/**
+ * FOOTER
+ * ============================================================ */
+footer {
+
+}

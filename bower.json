@@ -1,0 +1,22 @@
+{
+  "name": "itcss-sass-starter",
+  "version": "0.1.0",
+  "authors": [
+    "Joe Bruno <joevbruno@me.com>",
+    "Jason Frank"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5shiv": "~3.7.2",
+    "modernizr": "~2.8.3",
+    "bourbon": "~4.2.2",
+  }
+}
