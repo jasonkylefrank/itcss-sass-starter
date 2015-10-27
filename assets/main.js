@@ -11,7 +11,7 @@ class Group extends React.Component {
         return (
 
             <div className='container'>
-                <h1> Hello Again, Sup dfgdg</h1>
+                <h1> Hello World</h1>
       
                 <input placeholder='dsfdst'/>
                 <p>Test d ffAnother Onedfdf</p>

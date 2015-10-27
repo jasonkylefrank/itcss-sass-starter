@@ -23,7 +23,7 @@ const devServer = {
 
 module.exports = {
     debug: true,
-    devServer, devServer,
+    devServer: devServer,
     devtool: '#eval-source-map', //'#source-map'
     context: path.resolve(__dirname, '../../' ), //  __dirname,
     entry: [
