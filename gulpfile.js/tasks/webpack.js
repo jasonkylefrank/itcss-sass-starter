@@ -55,8 +55,3 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
     ]
 };
-
-
-
-
-
