@@ -10,17 +10,17 @@
 // http://knockoutjs.com/documentation/component-registration.html
 // http://knockoutjs.com/documentation/component-custom-elements.html#passing-markup-into-components
 
-const componentsPath = './06-Components';
+const componentsPath = './05-Objects';
 
 import ko from 'knockout';
 //import likeVM from (componentsPath + '/LikeWidget/likeWidgetVM'); // this won't work.
-import likeVM from './06-Components/LikeWidget/likeWidgetVM';
+import likeVM from './05-Objects/LikeWidget/likeWidgetVM';
 
 
 ko.components.register('like-widget', {
     viewModel: likeVM,
     //template: require(componentsPath + '/LikeWidget/likeWidget.html') // this doesn't work.
-    template: require('./06-Components/LikeWidget/likeWidget.html')
+    template: require('./05-Objects/LikeWidget/likeWidget.html')
 });
 
 function Product(name, rating) {
