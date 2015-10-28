@@ -39,8 +39,13 @@
     <link rel="stylesheet" href="css/build/core.css">
   </head>
   <body>
-    <h1>Massive Title! ffdfdf</h1>
-    <div id="react"></div>
+    <h1>Massive Title! Hello Knockout test</h1>
+    <!-- ko foreach: products -->
+    <div data-bind='component: {
+                      name: "like-widget",
+                      params: {chosenValue: userRating, name: name}}'></div>
+    <!-- /ko -->
+
     <!-- build:js scripts/main.min.js
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script id="hlscript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js" async></script>-->

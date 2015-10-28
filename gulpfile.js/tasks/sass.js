@@ -53,7 +53,18 @@ const getSassy = (srcPath, destPath) => {
         .pipe( debug())
         .pipe( config.docs.publish ? docs(config.docs).on('error', notify.error) : gutil.noop() )
         .pipe( maps.init() )
-        .pipe( sass(config.sass) ).on( 'error', notify.error )
+        // This line is blowing up (the notify plugin)...
+        //.pipe( sass(config.sass) ).on( 'error', notify.error )
+
+        // TEMP: trying to fix a problem with the notify plugin blowing up
+        .pipe( sass({
+          style: 'compressed',
+          errLogToConsole: false,
+          onError: function(err) {
+              return notify().write(err);
+            }
+        }))
+
         .pipe( maps.write() )
         .pipe( check(['*.css', '!*.map'], postcss(config.processors)) )
         .pipe( size() ) // outputs files size
@@ -66,7 +77,7 @@ const getSassy = (srcPath, destPath) => {
         }) )
         .pipe( debug())
         .pipe( gulp.dest(destPath) )
-        .pipe( browserSync.stream() ); 
+        .pipe( browserSync.stream() );
 };
 
 
